@@ -17,7 +17,6 @@ import com.example.kr.model.RecData;
 import java.util.List;
 
 public class RecommendationsAdapter extends RecyclerView.Adapter<RecommendationsAdapter.RecommendationsViewHolder> {
-
     Context context;
     List<RecData> recommendationsDataList;
 
@@ -39,7 +38,6 @@ public class RecommendationsAdapter extends RecyclerView.Adapter<Recommendations
         holder.placeName.setText(recommendationsDataList.get(position).getPlaceName());
         holder.price.setText(recommendationsDataList.get(position).getPrice());
         holder.placeImage.setImageResource(recommendationsDataList.get(position).getImageUrl());
-
         String name = recommendationsDataList.get(position).getPlaceName();
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +47,6 @@ public class RecommendationsAdapter extends RecyclerView.Adapter<Recommendations
                 context.startActivity(i);
             }
         });
-
     }
 
     @Override
@@ -58,18 +55,14 @@ public class RecommendationsAdapter extends RecyclerView.Adapter<Recommendations
     }
 
     public static final class RecommendationsViewHolder extends RecyclerView.ViewHolder{
-
         ImageView placeImage;
         TextView placeName, countryName, price;
-
         public RecommendationsViewHolder(@NonNull View itemView) {
             super(itemView);
-
             placeImage = itemView.findViewById(R.id.place_image);
             placeName = itemView.findViewById(R.id.place_name);
             countryName = itemView.findViewById(R.id.country_name);
             price = itemView.findViewById(R.id.price);
-
         }
     }
 }

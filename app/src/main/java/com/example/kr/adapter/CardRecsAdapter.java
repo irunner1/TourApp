@@ -37,7 +37,6 @@ public class CardRecsAdapter extends RecyclerView.Adapter<CardRecsAdapter.CardRe
     public void onBindViewHolder(@NonNull CardRecsAdapter.CardRecsViewHolder holder, int position) {
         holder.placeName.setText(cardDataList.get(position).getPlaceName());
         holder.placeImage.setImageResource(cardDataList.get(position).getImageUrl());
-
         String name = cardDataList.get(position).getPlaceName();
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +46,6 @@ public class CardRecsAdapter extends RecyclerView.Adapter<CardRecsAdapter.CardRe
                 context.startActivity(i);
             }
         });
-
     }
 
     @Override
@@ -56,10 +54,8 @@ public class CardRecsAdapter extends RecyclerView.Adapter<CardRecsAdapter.CardRe
     }
 
     public static final class CardRecsViewHolder extends RecyclerView.ViewHolder{
-
         ImageView placeImage;
         TextView placeName;
-
         public CardRecsViewHolder(@NonNull View itemView) {
             super(itemView);
 

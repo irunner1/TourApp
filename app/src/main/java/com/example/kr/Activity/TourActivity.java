@@ -48,7 +48,10 @@ public class TourActivity extends AppCompatActivity {
             Fragment fragment = new ItalyFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
         }
-
+        if (extras.getString("name").equals("Абхазия")) {
+            Fragment fragment = new AbkhaziaFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
+        }
 
         //Страница Поиск
         if (extras.getString("name").equals("Сингапур")) {
@@ -60,11 +63,7 @@ public class TourActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
         }
 
-        //Страница Понравившиеся
-        if (extras.getString("name").equals("Абхазия")) {
-            Fragment fragment = new AbkhaziaFragment();
-            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
-        }
+
         if (extras.getString("name").equals("Абхазия")) {
 //            Fragment fragment = new AbkhaziaFragment();
 //            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();

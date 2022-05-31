@@ -12,7 +12,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="1000dp"
+        android:layout_height="wrap_content"
         android:isScrollContainer="true"
         tools:context=".HomeFragment">
 
@@ -151,7 +151,6 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
@@ -170,16 +169,15 @@
             app:layout_constraintTop_toBottomOf="@+id/CLPlans" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recomendations"
+            android:id="@+id/recommendations"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="11dp"
+            android:layout_height="1076dp"
+            android:layout_marginTop="12dp"
             android:nestedScrollingEnabled="false"
             app:fastScrollEnabled="false"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

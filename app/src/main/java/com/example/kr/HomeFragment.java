@@ -50,6 +50,7 @@ public class HomeFragment extends Fragment {
         recommendationsDataList.add(new RecData("Абхазия","Отправление из Москвы","от 12 699 р", R.drawable.tour1));
         recommendationsDataList.add(new RecData("Турция","Отправление из Москвы","от 19 282 р", R.drawable.tour2));
         recommendationsDataList.add(new RecData("Италия","Отправление из Москвы","от 80 146 р", R.drawable.tour3));
+        recommendationsDataList.add(new RecData("Сингапур","Отправление из Москвы","от 50 256 р", R.drawable.singapore));
         setRecommendationsRecycler(recommendationsDataList, view);
 
         List<CardRecsData> cardDataList = new ArrayList<>();
@@ -58,12 +59,11 @@ public class HomeFragment extends Fragment {
         cardDataList.add(new CardRecsData("Рим", R.drawable.tour3));
         cardDataList.add(new CardRecsData("Анталья", R.drawable.antalya));
         setCardRecsRecycler(cardDataList, view);
-
         return view;
     }
 
     private  void setRecommendationsRecycler(List<RecData> recentsDataList, View view){
-        recommendationsRecycler = view.findViewById(R.id.recomendations);
+        recommendationsRecycler = view.findViewById(R.id.recommendations);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getContext(), RecyclerView.VERTICAL, false);
         recommendationsRecycler.setLayoutManager(layoutManager);
         recommendationsAdapter = new RecommendationsAdapter(this.getContext(), recentsDataList);
