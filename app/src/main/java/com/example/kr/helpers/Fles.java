@@ -58,7 +58,7 @@ public class Fles {
     public static void deleteFromFile(Context context, String rep){
         try {
             String buf = readFromFile(context);
-            buf = buf.replace(rep, " ");
+            buf = buf.replace(rep, "");
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(context.openFileOutput(FILENAME, MODE_PRIVATE)));
             bw.write(buf);
             bw.close();

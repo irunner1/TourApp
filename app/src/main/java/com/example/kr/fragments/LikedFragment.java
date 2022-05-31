@@ -44,9 +44,10 @@ public class LikedFragment extends Fragment {
                 if (i > c1 && i < c2) {dates += iteratorName.charAt(i);}
                 if (i > c2) prices += iteratorName.charAt(i);
             }
-            if (countryName.equals("Абхазия")) { likedDataList.add(new LikedData(countryName, dates, prices, R.drawable.tour1)); }//добавляем переменные в лист
+            if (countryName.equals("Абхазия")) { likedDataList.add(new LikedData(countryName, dates, prices, R.drawable.tour1)); }//можно передавать и R.drawable.pic через int
             if (countryName.equals("Турция")) { likedDataList.add(new LikedData(countryName, dates, prices, R.drawable.tour2)); }
             if (countryName.equals("Италия")) { likedDataList.add(new LikedData(countryName, dates, prices, R.drawable.tour3)); }
+            if (countryName.equals("Сингапур")) { likedDataList.add(new LikedData(countryName, dates, prices, R.drawable.singapore)); }
         }
         setHistoryRecycler(likedDataList, view);
         return view;

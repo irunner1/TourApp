@@ -3,8 +3,9 @@ package com.example.kr.Activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import android.os.Bundle;
-import androidx.appcompat.widget.Toolbar;
+
 import com.example.kr.R;
+import com.example.kr.fragments.FindFragment;
 import com.example.kr.pages.AntaliaFragment;
 import com.example.kr.pages.BarsaFragment;
 import com.example.kr.pages.ItalyFragment;
@@ -62,12 +63,11 @@ public class TourActivity extends AppCompatActivity {
             Fragment fragment = new ParisFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
         }
-
-
-        if (extras.getString("name").equals("Абхазия")) {
-//            Fragment fragment = new AbkhaziaFragment();
-//            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
+        if (extras.getString("name").equals("Поиск")) {
+            Fragment fragment = new FindFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
         }
+
         if (extras.getString("name").equals("Абхазия")) {
 //            Fragment fragment = new AbkhaziaFragment();
 //            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
