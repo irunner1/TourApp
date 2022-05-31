@@ -39,7 +39,6 @@ public class Fles {
     }
 
     public static String readFromFile(Context context) { //возвращает весь файл
-//        String countryName = "", dates = "", prices = "";
         String text = "";
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(context.openFileInput(FILENAME)));

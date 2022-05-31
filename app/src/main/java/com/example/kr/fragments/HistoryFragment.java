@@ -28,7 +28,6 @@ public class HistoryFragment extends Fragment {
         List<HistoryData> historyDataList = new ArrayList<>();
         historyDataList.add(new HistoryData("Абхазия","15-20 июля","13 699 р", R.drawable.tour1));
         historyDataList.add(new HistoryData("Абхазия","15-20 июля","13 699 р", R.drawable.tour1));
-
         setHistoryRecycler(historyDataList, view);
         return view;
     }

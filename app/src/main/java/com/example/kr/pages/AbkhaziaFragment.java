@@ -24,7 +24,6 @@ public class AbkhaziaFragment extends Fragment {
     private Toolbar toolbar;
     ImageButton btn;
     boolean active_btn = false;
-    String countryName = "";
 
     private void toolBarSet() {
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
@@ -48,19 +47,6 @@ public class AbkhaziaFragment extends Fragment {
         toolBarSet();
         btn = (ImageButton)view.findViewById(R.id.imageButton);
         btn.setOnClickListener(this::onMyButtonClick);
-
-//        String tmp = Fles.readFromFile(getContext());
-//        int c1 = tmp.indexOf('|');
-//        for (int i = 0; i < tmp.length(); i++) {
-//            if (i < c1) {
-//                countryName += tmp.charAt(i);
-//            }
-//        }
-
-//        if (countryName.equals("Абхазия")) {
-//            active_btn = true;
-//            btn.setImageResource(R.drawable.like_filled);
-//        }
 
         String tmp = Fles.readFromFile(getContext()); //Проверка наличия страны в файле
         if (tmp.contains("Абхазия")) {

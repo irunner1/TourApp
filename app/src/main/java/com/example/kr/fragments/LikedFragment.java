@@ -21,39 +21,31 @@ public class LikedFragment extends Fragment {
     RecyclerView RecViewLiked;
     LikedAdapter likedAdapter;
     public static List<LikedData> likedDataList = new ArrayList<>();
-//    String countryName = "", dates = "", prices = "";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_liked, container, false);
-        String tmp = Fles.readFromFile(getContext());
-        if (tmp.isEmpty()) { return view; }
-        likedDataList.clear();
-        long count = tmp.chars().filter(ch -> ch == '.').count();
+
+        String tmp = Fles.readFromFile(getContext()); //Читаются данные из файла
+        if (tmp.isEmpty()) { return view; } //Если их нет, выводим пустоту
+        likedDataList.clear(); //Очищаем лист
+        long count = tmp.chars().filter(ch -> ch == '.').count(); //Считаем колво строк в файле
+
         for (int j = 0; j < count; j++) {
             String countryName = "", dates = "", prices = "";
-            String iteratorName = tmp.substring(0, tmp.indexOf(".") + 1);
+            String iteratorName = tmp.substring(0, tmp.indexOf(".") + 1); //Берем подстроку, которая равна первой строке файла
             StringBuffer sb = new StringBuffer(tmp);
-            sb.delete(0, tmp.indexOf(".") + 1);
-            tmp = sb.toString();
-            int c1 = iteratorName.indexOf('|');
-            int c2 = iteratorName.indexOf('/');
-            for (int i = 0; i < iteratorName.length(); i++) {
+            tmp = sb.delete(0, tmp.indexOf(".") + 1).toString(); //удаляем из tmp значение, которое уже используем
+            int c1 = iteratorName.indexOf('|'); //находим элемент после названия страны
+            int c2 = iteratorName.indexOf('/'); //находим элемент после дат
+            for (int i = 0; i < iteratorName.length(); i++) { //парсим данные в переменные
                 if (i < c1) {countryName += iteratorName.charAt(i);}
                 if (i > c1 && i < c2) {dates += iteratorName.charAt(i);}
                 if (i > c2) prices += iteratorName.charAt(i);
             }
-            likedDataList.add(new LikedData(countryName, dates, prices, R.drawable.tour1));
+            likedDataList.add(new LikedData(countryName, dates, prices, R.drawable.tour1)); //добавляем переменные в лист
         }
-
-//        int c1 = tmp.indexOf('|');
-//        int c2 = tmp.indexOf('/');
-//        for (int i = 0; i < tmp.length(); i++) {
-//            if (i < c1) {countryName += tmp.charAt(i);}
-//            if (i > c1 && i < c2) {dates += tmp.charAt(i);}
-//            if (i > c2) prices += tmp.charAt(i);
-//        }
         setHistoryRecycler(likedDataList, view);
         return view;
     }

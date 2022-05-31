@@ -9,11 +9,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.example.kr.R;
+import com.example.kr.fragments.LikedFragment;
+import com.example.kr.helpers.Fles;
 
 public class TurkeyFragment extends Fragment {
     private Toolbar toolbar;
+    ImageButton btn;
+    boolean active_btn = false;
 
     private void toolBarSet() {
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
@@ -35,8 +40,28 @@ public class TurkeyFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_turkey, container, false);
         toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         toolBarSet();
-
-
+        btn = (ImageButton)view.findViewById(R.id.imageButtonTurkey);
+        btn.setOnClickListener(this::onButtonClick);
+        String tmp = Fles.readFromFile(getContext()); //Проверка наличия страны в файле
+        if (tmp.contains("Турция")) {
+            active_btn = true;
+            btn.setImageResource(R.drawable.like_filled);
+        }
         return view;
+    }
+
+    public void onButtonClick(View view) {
+        if (active_btn) {
+            active_btn = false;
+            btn.setImageResource(R.drawable.like);
+            if (!LikedFragment.likedDataList.isEmpty()) {
+                LikedFragment.likedDataList.removeIf(o -> o.equals("Турция"));
+            }
+            Fles.deleteFromFile(getContext(), "Турция|10-20 июля/19 282 р.");
+            return;
+        }
+        active_btn = true;
+        Fles.writeToFile("Турция|", "10-20 июля/", "19 282 р.", getContext());
+        btn.setImageResource(R.drawable.like_filled);
     }
 }

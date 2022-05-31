@@ -21,7 +21,6 @@ public class ItalyFragment extends Fragment {
     private Toolbar toolbar;
     ImageButton btn;
     boolean active_btn = false;
-    String countryName = "";
 
     private void toolBarSet() {
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
@@ -43,13 +42,11 @@ public class ItalyFragment extends Fragment {
         toolBarSet();
         btn = (ImageButton)view.findViewById(R.id.imageButtonItaly);
         btn.setOnClickListener(this::onButtonClick);
-
         String tmp = Fles.readFromFile(getContext()); //Проверка наличия страны в файле
         if (tmp.contains("Италия")) {
             active_btn = true;
             btn.setImageResource(R.drawable.like_filled);
         }
-
         return view;
     }
 
