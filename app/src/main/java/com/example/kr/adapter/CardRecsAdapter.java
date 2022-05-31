@@ -58,7 +58,6 @@ public class CardRecsAdapter extends RecyclerView.Adapter<CardRecsAdapter.CardRe
         TextView placeName;
         public CardRecsViewHolder(@NonNull View itemView) {
             super(itemView);
-
             placeImage = itemView.findViewById(R.id.place_image);
             placeName = itemView.findViewById(R.id.place_name);
         }

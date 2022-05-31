@@ -38,6 +38,7 @@ public class FindFragment extends Fragment {
         listView = (ListView) view.findViewById(R.id.Searc);
         arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, name);
         listView.setAdapter(arrayAdapter);
+//        searchView.onActionViewExpanded();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {

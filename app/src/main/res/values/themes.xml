@@ -33,4 +33,8 @@
     <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
         <item name="colorControlNormal">@color/colorControlNormal</item>
     </style>
+
+    <style name="CSearchView" parent="Base.Widget.AppCompat.SearchView">
+        <item name="searchIcon">@drawable/ic_search_red_24</item>
+    </style>
 </resources>
