@@ -22,6 +22,6 @@ public class AccountFragment extends Fragment {
     }
 
     private void onClick(View view) {
-        textView.setText("a");
+//        добавить страницу
     }
 }

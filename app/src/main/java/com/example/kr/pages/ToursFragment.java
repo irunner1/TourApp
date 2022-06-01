@@ -5,15 +5,24 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.kr.R;
+import com.example.kr.adapter.ActivityAdapter;
+import com.example.kr.model.TourData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ToursFragment extends Fragment {
     private Toolbar toolbar;
+    ActivityAdapter activityAdapter;
+    RecyclerView activityRecycler;
 
     private void toolBarSet() {
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
@@ -35,6 +44,20 @@ public class ToursFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_tours, container, false);
         toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         toolBarSet();
+        List<TourData> ToursDataList = new ArrayList<>();
+        ToursDataList.add(new TourData("Тур по Нью Йорку","15:00","6 500 р", R.drawable.tour1));
+        ToursDataList.add(new TourData("Тур по Манхеттену","15 июля","2 500 р", R.drawable.tour2));
+        ToursDataList.add(new TourData("Италия",""," р", R.drawable.tour3));
+        ToursDataList.add(new TourData("Сингапур",""," р", R.drawable.singapore));
+        setActivityRecycler(ToursDataList, view);
         return view;
+    }
+
+    private void setActivityRecycler(List<TourData> ToursDataList, View view){
+        activityRecycler = view.findViewById(R.id.Tours);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getContext(), RecyclerView.VERTICAL, false);
+        activityRecycler.setLayoutManager(layoutManager);
+        activityAdapter = new ActivityAdapter(this.getContext(), ToursDataList);
+        activityRecycler.setAdapter(activityAdapter);
     }
 }
