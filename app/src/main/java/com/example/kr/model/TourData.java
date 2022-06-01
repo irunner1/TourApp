@@ -1,7 +1,6 @@
 package com.example.kr.model;
 
-public class LikedData {
-
+public class TourData {
     String placeName;
     String countryName;
     String price;
@@ -15,7 +14,7 @@ public class LikedData {
         this.imageUrl = imageUrl;
     }
 
-    public LikedData(String placeName, String countryName, String price, Integer imageUrl) {
+    public TourData(String placeName, String countryName, String price, Integer imageUrl) {
         this.placeName = placeName;
         this.countryName = countryName;
         this.price = price;

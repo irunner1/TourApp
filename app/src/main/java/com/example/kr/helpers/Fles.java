@@ -2,23 +2,14 @@ package com.example.kr.helpers;
 
 import static android.content.Context.MODE_PRIVATE;
 
-import static androidx.core.content.PackageManagerCompat.LOG_TAG;
-
-import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
-
-import com.example.kr.model.LikedData;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.List;
 
 public class Fles {
     final static String FILENAME = "file";

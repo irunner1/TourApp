@@ -13,17 +13,15 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.example.kr.Activity.TourActivity;
-import com.example.kr.adapter.CardRecsAdapter;
-import com.example.kr.fragments.LikedFragment;
-import com.example.kr.helpers.Fles;
-import com.example.kr.model.CardRecsData;
+import com.example.kr.adapter.CardAdapter;
+import com.example.kr.model.CardData;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SearchFragment extends Fragment {
-    RecyclerView cardRecsRecycler;
-    CardRecsAdapter cardRecsAdapter;
+    RecyclerView cardRecycler;
+    CardAdapter cardAdapter;
     EditText editText;
 
     @Override
@@ -37,26 +35,26 @@ public class SearchFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
         editText = (EditText) view.findViewById(R.id.editText);
         editText.setOnClickListener(this::onSearchClick);
-        List<CardRecsData> cardDataList = new ArrayList<>();
-        cardDataList.add(new CardRecsData("Нью-Йорк", R.drawable.new_york));
-        cardDataList.add(new CardRecsData("Барселона", R.drawable.barsa));
-        List<CardRecsData> cardDataList2 = new ArrayList<>();
-        cardDataList2.add(new CardRecsData("Рим", R.drawable.tour3));
-        cardDataList2.add(new CardRecsData("Париж", R.drawable.paris));
+        List<CardData> cardDataList = new ArrayList<>();
+        cardDataList.add(new CardData("Нью-Йорк", R.drawable.new_york));
+        cardDataList.add(new CardData("Барселона", R.drawable.barsa));
+        List<CardData> cardDataList2 = new ArrayList<>();
+        cardDataList2.add(new CardData("Рим", R.drawable.tour3));
+        cardDataList2.add(new CardData("Париж", R.drawable.paris));
 
         int SearchID = getResources().getIdentifier("RecViewSearch1", "id", getActivity().getPackageName());
         int Search2ID = getResources().getIdentifier("RecViewSearch2", "id", getActivity().getPackageName());
-        setCardRecsRecycler(cardDataList, view, SearchID);
-        setCardRecsRecycler(cardDataList2, view, Search2ID);
+        setCardRecycler(cardDataList, view, SearchID);
+        setCardRecycler(cardDataList2, view, Search2ID);
         return view;
     }
 
-    private void setCardRecsRecycler(List<CardRecsData> cardDataList, View view, int id){
-        cardRecsRecycler = view.findViewById(id);
+    private void setCardRecycler(List<CardData> cardDataList, View view, int id){
+        cardRecycler = view.findViewById(id);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getContext(), RecyclerView.HORIZONTAL, false);
-        cardRecsRecycler.setLayoutManager(layoutManager);
-        cardRecsAdapter = new CardRecsAdapter(this.getContext(), cardDataList);
-        cardRecsRecycler.setAdapter(cardRecsAdapter);
+        cardRecycler.setLayoutManager(layoutManager);
+        cardAdapter = new CardAdapter(this.getContext(), cardDataList);
+        cardRecycler.setAdapter(cardAdapter);
     }
 
     public void onSearchClick(View view) {

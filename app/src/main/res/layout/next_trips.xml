@@ -47,19 +47,23 @@
         android:layout_marginTop="1dp"
         android:layout_marginBottom="8dp"
         android:text="Отправление из Москвы"
-        android:textColor="#9D9D9D "
+        android:textColor="#9D9D9D"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/place_name"
         app:layout_constraintTop_toBottomOf="@+id/place_name" />
 
-    <Button
-        android:id="@+id/btnView"
+    <TextView
+        android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-5dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="24dp"
         android:text="Посмотреть"
-        app:cornerRadius="10dp"
+        android:padding="10dp"
+        android:textColor="#ffffff"
+        android:background="@drawable/back"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

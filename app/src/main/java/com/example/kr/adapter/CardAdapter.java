@@ -13,28 +13,28 @@ import androidx.annotation.NonNull;
 
 import com.example.kr.Activity.TourActivity;
 import com.example.kr.R;
-import com.example.kr.model.CardRecsData;
+import com.example.kr.model.CardData;
 
 import java.util.List;
 
-public class CardRecsAdapter extends RecyclerView.Adapter<CardRecsAdapter.CardRecsViewHolder> {
+public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardRecsViewHolder> {
     Context context;
-    List<CardRecsData> cardDataList;
+    List<CardData> cardDataList;
 
-    public CardRecsAdapter(Context context, List<CardRecsData> cardDataList) {
+    public CardAdapter(Context context, List<CardData> cardDataList) {
         this.context = context;
         this.cardDataList = cardDataList;
     }
 
     @NonNull
     @Override
-    public CardRecsAdapter.CardRecsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CardAdapter.CardRecsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.cardrecs, parent, false);
-        return new CardRecsAdapter.CardRecsViewHolder(view);
+        return new CardAdapter.CardRecsViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CardRecsAdapter.CardRecsViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CardAdapter.CardRecsViewHolder holder, int position) {
         holder.placeName.setText(cardDataList.get(position).getPlaceName());
         holder.placeImage.setImageResource(cardDataList.get(position).getImageUrl());
         String name = cardDataList.get(position).getPlaceName();

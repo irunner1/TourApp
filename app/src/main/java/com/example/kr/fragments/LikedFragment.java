@@ -11,16 +11,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.kr.R;
-import com.example.kr.adapter.LikedAdapter;
-import com.example.kr.model.LikedData;
+import com.example.kr.adapter.TourAdapter;
 import com.example.kr.helpers.Fles;
+import com.example.kr.model.TourData;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class LikedFragment extends Fragment {
     RecyclerView RecViewLiked;
-    LikedAdapter likedAdapter;
-    public static List<LikedData> likedDataList = new ArrayList<>();
+    TourAdapter likedAdapter;
+    public static List<TourData> likedDataList = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,20 +45,20 @@ public class LikedFragment extends Fragment {
                 if (i > c1 && i < c2) {dates += iteratorName.charAt(i);}
                 if (i > c2) prices += iteratorName.charAt(i);
             }
-            if (countryName.equals("Абхазия")) { likedDataList.add(new LikedData(countryName, dates, prices, R.drawable.tour1)); }//можно передавать и R.drawable.pic через int
-            if (countryName.equals("Турция")) { likedDataList.add(new LikedData(countryName, dates, prices, R.drawable.tour2)); }
-            if (countryName.equals("Италия")) { likedDataList.add(new LikedData(countryName, dates, prices, R.drawable.tour3)); }
-            if (countryName.equals("Сингапур")) { likedDataList.add(new LikedData(countryName, dates, prices, R.drawable.singapore)); }
+            if (countryName.equals("Абхазия")) { likedDataList.add(new TourData(countryName, dates, prices, R.drawable.tour1)); }//можно передавать и R.drawable.pic через int
+            if (countryName.equals("Турция")) { likedDataList.add(new TourData(countryName, dates, prices, R.drawable.tour2)); }
+            if (countryName.equals("Италия")) { likedDataList.add(new TourData(countryName, dates, prices, R.drawable.tour3)); }
+            if (countryName.equals("Сингапур")) { likedDataList.add(new TourData(countryName, dates, prices, R.drawable.singapore)); }
         }
         setHistoryRecycler(likedDataList, view);
         return view;
     }
 
-    private void setHistoryRecycler(List<LikedData> likedDataList, View view){
+    private void setHistoryRecycler(List<TourData> likedDataList, View view){
         RecViewLiked = view.findViewById(R.id.RecViewLiked);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getContext(), RecyclerView.VERTICAL, false);
         RecViewLiked.setLayoutManager(layoutManager);
-        likedAdapter = new LikedAdapter(this.getContext(), likedDataList);
+        likedAdapter = new TourAdapter(this.getContext(), likedDataList);
         RecViewLiked.setAdapter(likedAdapter);
     }
 }

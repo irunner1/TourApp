@@ -1,6 +1,6 @@
 package com.example.kr.model;
 
-public class CardRecsData {
+public class CardData {
     String placeName;
     Integer imageUrl;
 
@@ -12,7 +12,7 @@ public class CardRecsData {
         this.imageUrl = imageUrl;
     }
 
-    public CardRecsData(String placeName, Integer imageUrl) {
+    public CardData(String placeName, Integer imageUrl) {
         this.placeName = placeName;
         this.imageUrl = imageUrl;
     }

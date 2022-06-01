@@ -11,23 +11,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kr.Activity.TourActivity;
-import com.example.kr.adapter.RecommendationsAdapter;
-import com.example.kr.model.RecData;
+import com.example.kr.adapter.TourAdapter;
+import com.example.kr.model.TourData;
 
-import com.example.kr.adapter.CardRecsAdapter;
-import com.example.kr.model.CardRecsData;
+import com.example.kr.adapter.CardAdapter;
+import com.example.kr.model.CardData;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
-    RecyclerView recommendationsRecycler, cardRecsRecycler;
-    RecommendationsAdapter recommendationsAdapter;
-    CardRecsAdapter cardRecsAdapter;
+    RecyclerView tourRecycler, cardRecycler;
+    TourAdapter tourAdapter;
+    CardAdapter cardAdapter;
     Button btnTour, btnHotels, btnRestaurant, btnActivity;
+    ScrollView scrollView;
+    TextView tv;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,7 +42,8 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-
+        scrollView = (ScrollView) view.findViewById(R.id.SV);
+        tv = (TextView) view.findViewById(R.id.textView7);
         btnTour = (Button) view.findViewById(R.id.btnTour);
         btnHotels = (Button) view.findViewById(R.id.btnHotels);
         btnRestaurant = (Button) view.findViewById(R.id.btnRestaurants);
@@ -48,42 +53,43 @@ public class HomeFragment extends Fragment {
         btnRestaurant.setOnClickListener(this::onRestButtonClick);
         btnActivity.setOnClickListener(this::onActivityButtonClick);
 
-        List<RecData> recommendationsDataList = new ArrayList<>();
-        recommendationsDataList.add(new RecData("Абхазия","Отправление из Москвы","от 12 699 р", R.drawable.tour1));
-        recommendationsDataList.add(new RecData("Турция","Отправление из Москвы","от 19 282 р", R.drawable.tour2));
-        recommendationsDataList.add(new RecData("Италия","Отправление из Москвы","от 80 146 р", R.drawable.tour3));
-        recommendationsDataList.add(new RecData("Сингапур","Отправление из Москвы","от 50 256 р", R.drawable.singapore));
-        setRecommendationsRecycler(recommendationsDataList, view);
+        List<TourData> TourDataList = new ArrayList<>();
+        TourDataList.add(new TourData("Абхазия","Отправление из Москвы","от 12 699 р", R.drawable.tour1));
+        TourDataList.add(new TourData("Турция","Отправление из Москвы","от 19 282 р", R.drawable.tour2));
+        TourDataList.add(new TourData("Италия","Отправление из Москвы","от 80 146 р", R.drawable.tour3));
+        TourDataList.add(new TourData("Сингапур","Отправление из Москвы","от 50 256 р", R.drawable.singapore));
+        setTourRecycler(TourDataList, view);
 
-        List<CardRecsData> cardDataList = new ArrayList<>();
-        cardDataList.add(new CardRecsData("Нью-Йорк", R.drawable.new_york));
-        cardDataList.add(new CardRecsData("Барселона", R.drawable.barsa));
-        cardDataList.add(new CardRecsData("Рим", R.drawable.tour3));
-        cardDataList.add(new CardRecsData("Анталья", R.drawable.antalya));
-        setCardRecsRecycler(cardDataList, view);
+        List<CardData> cardDataList = new ArrayList<>();
+        cardDataList.add(new CardData("Нью-Йорк", R.drawable.new_york));
+        cardDataList.add(new CardData("Барселона", R.drawable.barsa));
+        cardDataList.add(new CardData("Рим", R.drawable.tour3));
+        cardDataList.add(new CardData("Анталья", R.drawable.antalya));
+        setCardRecycler(cardDataList, view);
         return view;
     }
 
-    private  void setRecommendationsRecycler(List<RecData> recentsDataList, View view){
-        recommendationsRecycler = view.findViewById(R.id.recommendations);
+    private  void setTourRecycler(List<TourData> tourDataList, View view){
+        tourRecycler = view.findViewById(R.id.recommendations);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getContext(), RecyclerView.VERTICAL, false);
-        recommendationsRecycler.setLayoutManager(layoutManager);
-        recommendationsAdapter = new RecommendationsAdapter(this.getContext(), recentsDataList);
-        recommendationsRecycler.setAdapter(recommendationsAdapter);
+        tourRecycler.setLayoutManager(layoutManager);
+        tourAdapter = new TourAdapter(this.getContext(), tourDataList);
+        tourRecycler.setAdapter(tourAdapter);
     }
 
-    private  void setCardRecsRecycler(List<CardRecsData> cardDataList, View view){
-        cardRecsRecycler = view.findViewById(R.id.CardRec);
+    private  void setCardRecycler(List<CardData> cardList, View view){
+        cardRecycler = view.findViewById(R.id.CardRec);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getContext(), RecyclerView.HORIZONTAL, false);
-        cardRecsRecycler.setLayoutManager(layoutManager);
-        cardRecsAdapter = new CardRecsAdapter(this.getContext(), cardDataList);
-        cardRecsRecycler.setAdapter(cardRecsAdapter);
+        cardRecycler.setLayoutManager(layoutManager);
+        cardAdapter = new CardAdapter(this.getContext(), cardList);
+        cardRecycler.setAdapter(cardAdapter);
     }
 
     public void onTourButtonClick(View view) {
-        Intent i = new Intent(getContext(), TourActivity.class);
-        i.putExtra("name", btnTour.getText().toString());
-        getContext().startActivity(i);
+//        Intent i = new Intent(getContext(), TourActivity.class);
+//        i.putExtra("name", btnTour.getText().toString());
+//        getContext().startActivity(i);
+        scrollView.scrollTo(tv.getScrollX(), tv.getScrollY());
     }
     public void onHotelButtonClick(View view) {
         Intent i = new Intent(getContext(), TourActivity.class);

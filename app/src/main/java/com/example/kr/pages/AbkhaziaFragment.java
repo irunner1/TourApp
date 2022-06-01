@@ -1,7 +1,5 @@
 package com.example.kr.pages;
 
-import static com.example.kr.helpers.Fles.*;
-
 import android.os.Bundle;
 import com.example.kr.fragments.LikedFragment;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,13 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import com.example.kr.R;
-import com.example.kr.fragments.LikedFragment;
-import com.example.kr.model.LikedData;
 import com.example.kr.helpers.Fles;
-import java.util.Objects;
 
 public class AbkhaziaFragment extends Fragment {
     private Toolbar toolbar;

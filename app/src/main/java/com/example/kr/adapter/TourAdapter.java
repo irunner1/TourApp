@@ -13,35 +13,32 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kr.Activity.TourActivity;
 import com.example.kr.R;
-import com.example.kr.model.HistoryData;
-
+import com.example.kr.model.TourData;
 import java.util.List;
 
-public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder> {
-
+public class TourAdapter extends RecyclerView.Adapter<TourAdapter.RecommendationsViewHolder> {
     Context context;
-    List<HistoryData> historyDataList;
+    List<TourData> tourDataList;
 
-    public HistoryAdapter(Context context, List<HistoryData> historyDataList) {
+    public TourAdapter(Context context, List<TourData> recommendationsDataList) {
         this.context = context;
-        this.historyDataList = historyDataList;
+        this.tourDataList = recommendationsDataList;
     }
 
     @NonNull
     @Override
-    public HistoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.history_trips, parent, false);
-        return new HistoryViewHolder(view);
+    public RecommendationsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.recommendations, parent, false);
+        return new RecommendationsViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HistoryAdapter.HistoryViewHolder holder, int position) {
-        holder.countryName.setText(historyDataList.get(position).getCountryName());
-        holder.placeName.setText(historyDataList.get(position).getPlaceName());
-        holder.price.setText(historyDataList.get(position).getPrice());
-        holder.placeImage.setImageResource(historyDataList.get(position).getImageUrl());
-
-        String name = historyDataList.get(position).getPlaceName();
+    public void onBindViewHolder(@NonNull RecommendationsViewHolder holder, int position) {
+        holder.countryName.setText(tourDataList.get(position).getCountryName());
+        holder.placeName.setText(tourDataList.get(position).getPlaceName());
+        holder.price.setText(tourDataList.get(position).getPrice());
+        holder.placeImage.setImageResource(tourDataList.get(position).getImageUrl());
+        String name = tourDataList.get(position).getPlaceName();
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,22 +51,18 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
 
     @Override
     public int getItemCount() {
-        return historyDataList.size();
+        return tourDataList.size();
     }
 
-    public static final class HistoryViewHolder extends RecyclerView.ViewHolder{
-
+    public static final class RecommendationsViewHolder extends RecyclerView.ViewHolder{
         ImageView placeImage;
         TextView placeName, countryName, price;
-
-        public HistoryViewHolder(@NonNull View itemView) {
+        public RecommendationsViewHolder(@NonNull View itemView) {
             super(itemView);
-
             placeImage = itemView.findViewById(R.id.place_image);
             placeName = itemView.findViewById(R.id.place_name);
             countryName = itemView.findViewById(R.id.country_name);
             price = itemView.findViewById(R.id.price);
-
         }
     }
 }

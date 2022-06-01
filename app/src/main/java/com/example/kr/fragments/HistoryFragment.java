@@ -11,32 +11,32 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.kr.R;
-import com.example.kr.adapter.HistoryAdapter;
-import com.example.kr.model.HistoryData;
+import com.example.kr.adapter.TourAdapter;
+import com.example.kr.model.TourData;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HistoryFragment extends Fragment {
-    RecyclerView RecViewHistory;
-    HistoryAdapter historyAdapter;
-
+    RecyclerView tourRecycler;
+    TourAdapter tourAdapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_history, container, false);
-        List<HistoryData> historyDataList = new ArrayList<>();
-        historyDataList.add(new HistoryData("Абхазия","15-20 июля","13 699 р", R.drawable.tour1));
-        historyDataList.add(new HistoryData("Абхазия","15-20 июля","13 699 р", R.drawable.tour1));
-        setHistoryRecycler(historyDataList, view);
+        List<TourData> tourDataList = new ArrayList<>();
+        tourDataList.add(new TourData("Абхазия","5-10 января","12 699 р", R.drawable.tour1));
+        tourDataList.add(new TourData("Турция","1-10 мая","19 282 р", R.drawable.tour2));
+
+        setTourRecycler(tourDataList, view);
         return view;
     }
 
-    private void setHistoryRecycler(List<HistoryData> historyDataList, View view){
-        RecViewHistory = view.findViewById(R.id.RecViewHistory);
+    private  void setTourRecycler(List<TourData> tourDataList, View view){
+        tourRecycler = view.findViewById(R.id.RecViewHistory);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getContext(), RecyclerView.VERTICAL, false);
-        RecViewHistory.setLayoutManager(layoutManager);
-        historyAdapter = new HistoryAdapter(this.getContext(), historyDataList);
-        RecViewHistory.setAdapter(historyAdapter);
+        tourRecycler.setLayoutManager(layoutManager);
+        tourAdapter = new TourAdapter(this.getContext(), tourDataList);
+        tourRecycler.setAdapter(tourAdapter);
     }
 }
