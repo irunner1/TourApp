@@ -14,39 +14,40 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.kr.Activity.TourActivity;
 import com.example.kr.R;
 import com.example.kr.model.TourData;
+
 import java.util.List;
 
-public class TourAdapter extends RecyclerView.Adapter<TourAdapter.TourViewHolder> {
+public class CityAdapter extends RecyclerView.Adapter<CityAdapter.CityViewHolder>{
     Context context;
     List<TourData> tourDataList;
 
-    public TourAdapter(Context context, List<TourData> tourDataList) {
+    public CityAdapter(Context context, List<TourData> recommendationsDataList) {
         this.context = context;
-        this.tourDataList = tourDataList;
+        this.tourDataList = recommendationsDataList;
     }
 
     @NonNull
     @Override
-    public TourViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.recommendations, parent, false);
-        return new TourViewHolder(view);
+    public CityAdapter.CityViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.tours, parent, false);
+        return new CityAdapter.CityViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TourViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CityAdapter.CityViewHolder holder, int position) {
         holder.countryName.setText(tourDataList.get(position).getCountryName());
         holder.placeName.setText(tourDataList.get(position).getPlaceName());
         holder.price.setText(tourDataList.get(position).getPrice());
         holder.placeImage.setImageResource(tourDataList.get(position).getImageUrl());
-        String name = tourDataList.get(position).getPlaceName();
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(context, TourActivity.class);
-                i.putExtra("name", name);
-                context.startActivity(i);
-            }
-        });
+//        String name = tourDataList.get(position).getPlaceName();
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(context, TourActivity.class);
+//                i.putExtra("name", name);
+//                context.startActivity(i);
+//            }
+//        });
     }
 
     @Override
@@ -54,10 +55,10 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.TourViewHolder
         return tourDataList.size();
     }
 
-    public static final class TourViewHolder extends RecyclerView.ViewHolder{
+    public static final class CityViewHolder extends RecyclerView.ViewHolder{
         ImageView placeImage;
         TextView placeName, countryName, price;
-        public TourViewHolder(@NonNull View itemView) {
+        public CityViewHolder(@NonNull View itemView) {
             super(itemView);
             placeImage = itemView.findViewById(R.id.place_image);
             placeName = itemView.findViewById(R.id.place_name);

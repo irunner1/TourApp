@@ -5,16 +5,25 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.kr.R;
+import com.example.kr.adapter.CityAdapter;
 import com.example.kr.adapter.SliderAdapter;
+import com.example.kr.model.TourData;
 import com.smarteist.autoimageslider.SliderView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AntaliaFragment extends Fragment {
+    RecyclerView cityRecycler;
+    CityAdapter cityAdapter;
     private Toolbar toolbar;
     SliderView sliderView;
     int[] images = {R.drawable.antalya, R.drawable.antalia, R.drawable.antalia2, R.drawable.antalia3, R.drawable.antalia4};
@@ -31,7 +40,6 @@ public class AntaliaFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -44,6 +52,20 @@ public class AntaliaFragment extends Fragment {
         SliderAdapter sliderAdapter = new SliderAdapter(images);
         sliderView.setSliderAdapter(sliderAdapter);
         sliderView.startAutoCycle();
+        List<TourData> AntaliaDataList = new ArrayList<>();
+        AntaliaDataList.add(new TourData("Тур по Нью Йорку","15:00","6 500 р", R.drawable.tour1));
+        AntaliaDataList.add(new TourData("Тур по Манхеттену","15 июля","2 500 р", R.drawable.tour2));
+        AntaliaDataList.add(new TourData("Италия",""," р", R.drawable.tour3));
+        AntaliaDataList.add(new TourData("Сингапур",""," р", R.drawable.singapore));
+        setTourRecycler(AntaliaDataList, view);
         return view;
+    }
+
+    private  void setTourRecycler(List<TourData> AntaliaDataList, View view){
+        cityRecycler = view.findViewById(R.id.ToursAntalia);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getContext(), RecyclerView.HORIZONTAL, false);
+        cityRecycler.setLayoutManager(layoutManager);
+        cityAdapter = new CityAdapter(this.getContext(), AntaliaDataList);
+        cityRecycler.setAdapter(cityAdapter);
     }
 }
