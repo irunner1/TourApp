@@ -8,12 +8,15 @@ import com.example.kr.R;
 import com.example.kr.fragments.FindFragment;
 import com.example.kr.pages.AntaliaFragment;
 import com.example.kr.pages.BarsaFragment;
+import com.example.kr.pages.HotelsFragment;
 import com.example.kr.pages.ItalyFragment;
 import com.example.kr.pages.NYFragment;
 import com.example.kr.pages.AbkhaziaFragment;
 import com.example.kr.pages.ParisFragment;
+import com.example.kr.pages.RestaurantsFragment;
 import com.example.kr.pages.RomaFragment;
 import com.example.kr.pages.SingaporeFragment;
+import com.example.kr.pages.ToursFragment;
 import com.example.kr.pages.TurkeyFragment;
 
 public class TourActivity extends AppCompatActivity {
@@ -68,6 +71,18 @@ public class TourActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
         }
 
+        if (extras.getString("name").equals("Туры")) {
+            Fragment fragment = new ToursFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
+        }
+        if (extras.getString("name").equals("Отели")) {
+            Fragment fragment = new HotelsFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
+        }
+        if (extras.getString("name").equals("Рестораны")) {
+            Fragment fragment = new RestaurantsFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
+        }
         if (extras.getString("name").equals("Абхазия")) {
 //            Fragment fragment = new AbkhaziaFragment();
 //            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();

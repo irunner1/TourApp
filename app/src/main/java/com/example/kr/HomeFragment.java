@@ -1,5 +1,6 @@
 package com.example.kr;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.kr.Activity.TourActivity;
 import com.example.kr.adapter.RecommendationsAdapter;
 import com.example.kr.model.RecData;
 
@@ -79,13 +81,19 @@ public class HomeFragment extends Fragment {
     }
 
     public void onTourButtonClick(View view) {
-        Toast.makeText(getContext(), "This button is working", Toast.LENGTH_LONG).show();
+        Intent i = new Intent(getContext(), TourActivity.class);
+        i.putExtra("name", btnTour.getText().toString());
+        getContext().startActivity(i);
     }
     public void onHotelButtonClick(View view) {
-        Toast.makeText(getContext(), "Nice feature", Toast.LENGTH_LONG).show();
+        Intent i = new Intent(getContext(), TourActivity.class);
+        i.putExtra("name", btnHotels.getText().toString());
+        getContext().startActivity(i);
     }
     public void onRestButtonClick(View view) {
-        Toast.makeText(getContext(), "nah", Toast.LENGTH_LONG).show();
+        Intent i = new Intent(getContext(), TourActivity.class);
+        i.putExtra("name", btnRestaurant.getText().toString());
+        getContext().startActivity(i);
     }
     public void onActivityButtonClick(View view) {
         Toast.makeText(getContext(), "nice", Toast.LENGTH_LONG).show();
