@@ -53,10 +53,10 @@ public class RomaFragment extends Fragment {
         sliderView.setSliderAdapter(sliderAdapter);
         sliderView.startAutoCycle();
         List<TourData> RomaDataList = new ArrayList<>();
-        RomaDataList.add(new TourData("Тур по Нью Йорку","15:00","6 500 р", R.drawable.tour1));
-        RomaDataList.add(new TourData("Тур по Манхеттену","15 июля","2 500 р", R.drawable.tour2));
-        RomaDataList.add(new TourData("Италия",""," р", R.drawable.tour3));
-        RomaDataList.add(new TourData("Сингапур",""," р", R.drawable.singapore));
+        RomaDataList.add(new TourData("Тур по уличной еде","15:00","3 087 р", R.drawable.tourrome1));
+        RomaDataList.add(new TourData("Тур по городу","12:30","2 500 р", R.drawable.tourrome2));
+        RomaDataList.add(new TourData("Тур по Колизею","11:00","4 000 р", R.drawable.tourrome3));
+        RomaDataList.add(new TourData("Экскурсия по достопримечательностям","каждый час","2 500 р", R.drawable.tourrome4));
         setTourRecycler(RomaDataList, view);
         return view;
     }

@@ -55,10 +55,10 @@ public class NYFragment extends Fragment {
         sliderView.startAutoCycle();
 
         List<TourData> NYDataList = new ArrayList<>();
-        NYDataList.add(new TourData("Тур по Нью Йорку","15:00","6 500 р", R.drawable.tour1));
-        NYDataList.add(new TourData("Тур по Манхеттену","15 июля","2 500 р", R.drawable.tour2));
-        NYDataList.add(new TourData("Италия",""," р", R.drawable.tour3));
-        NYDataList.add(new TourData("Сингапур",""," р", R.drawable.singapore));
+        NYDataList.add(new TourData("Тур по Нью Йорку","15:00","6 500 р", R.drawable.nytour1));
+        NYDataList.add(new TourData("Тур по Манхеттену","15 июля","2 500 р", R.drawable.nytour2));
+        NYDataList.add(new TourData("Тур по Центральному парку","10:00","2 800 р", R.drawable.nytour3));
+        NYDataList.add(new TourData("Экскурсия на статую свободы","12:00","2 500 р", R.drawable.nytour4));
         setTourRecycler(NYDataList, view);
         return view;
     }

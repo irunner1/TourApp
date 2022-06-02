@@ -46,10 +46,10 @@ public class RestaurantsFragment extends Fragment {
         toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         toolBarSet();
         List<TourData> RestaurantsDataList = new ArrayList<>();
-        RestaurantsDataList.add(new TourData("Тур по Нью Йорку","15:00","6 500 р", R.drawable.tour1));
-        RestaurantsDataList.add(new TourData("Тур по Манхеттену","15 июля","2 500 р", R.drawable.tour2));
-        RestaurantsDataList.add(new TourData("Италия",""," р", R.drawable.tour3));
-        RestaurantsDataList.add(new TourData("Сингапур",""," р", R.drawable.singapore));
+        RestaurantsDataList.add(new TourData("Сабор де ла Вида Ресторан","ул. 1905 года, 10/1","РРРР", R.drawable.rest1));
+        RestaurantsDataList.add(new TourData("Джумбус","ул. Добровольческая 12","РРР", R.drawable.rest2));
+        RestaurantsDataList.add(new TourData("[KU:] рамен изакая бар","Большая Грузинская, 69","РР", R.drawable.rest3));
+        RestaurantsDataList.add(new TourData("Любовь Пирогова","ул. Мытная, 74 Даниловский рынок","РР", R.drawable.rest4));
         setActivityRecycler(RestaurantsDataList, view);
         return view;
     }

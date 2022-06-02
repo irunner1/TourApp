@@ -45,10 +45,10 @@ public class HotelsFragment extends Fragment {
         toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         toolBarSet();
         List<TourData> HotelsDataList = new ArrayList<>();
-        HotelsDataList.add(new TourData("Тур по Нью Йорку","15:00","6 500 р", R.drawable.tour1));
-        HotelsDataList.add(new TourData("Тур по Манхеттену","15 июля","2 500 р", R.drawable.tour2));
-        HotelsDataList.add(new TourData("Италия",""," р", R.drawable.tour3));
-        HotelsDataList.add(new TourData("Сингапур",""," р", R.drawable.singapore));
+        HotelsDataList.add(new TourData("Арт Отель","Староалексеевская, д.20","6 500 р /ночь", R.drawable.hotel1));
+        HotelsDataList.add(new TourData("ЛОТТЕ ОТЕЛЬ МОСКВА","Новинский бульвар, д. 8, стр. 2","2 500 р/ночь", R.drawable.hotel2));
+        HotelsDataList.add(new TourData("Арарат Парк Хаятт Москва","ул. Неглинная, д. 4","5 000 р/ночь", R.drawable.hotel3));
+        HotelsDataList.add(new TourData("Отель St. Regis Москва Никольская","ул. Никольская, 12","10 000 р/ночь", R.drawable.hotel4));
         setActivityRecycler(HotelsDataList, view);
         return view;
     }

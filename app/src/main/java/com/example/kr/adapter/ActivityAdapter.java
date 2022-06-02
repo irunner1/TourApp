@@ -39,15 +39,15 @@ public class ActivityAdapter extends RecyclerView.Adapter<TourAdapter.TourViewHo
         holder.placeName.setText(tourDataList.get(position).getPlaceName());
         holder.price.setText(tourDataList.get(position).getPrice());
         holder.placeImage.setImageResource(tourDataList.get(position).getImageUrl());
-        String name = tourDataList.get(position).getPlaceName();
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(context, TourActivity.class);
-                i.putExtra("name", name);
-                context.startActivity(i);
-            }
-        });
+//        String name = tourDataList.get(position).getPlaceName();
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(context, TourActivity.class);
+//                i.putExtra("name", name);
+//                context.startActivity(i);
+//            }
+//        });
     }
 
     @Override

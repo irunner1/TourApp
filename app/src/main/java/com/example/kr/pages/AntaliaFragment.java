@@ -53,10 +53,10 @@ public class AntaliaFragment extends Fragment {
         sliderView.setSliderAdapter(sliderAdapter);
         sliderView.startAutoCycle();
         List<TourData> AntaliaDataList = new ArrayList<>();
-        AntaliaDataList.add(new TourData("Тур по Нью Йорку","15:00","6 500 р", R.drawable.tour1));
-        AntaliaDataList.add(new TourData("Тур по Манхеттену","15 июля","2 500 р", R.drawable.tour2));
-        AntaliaDataList.add(new TourData("Италия",""," р", R.drawable.tour3));
-        AntaliaDataList.add(new TourData("Сингапур",""," р", R.drawable.singapore));
+        AntaliaDataList.add(new TourData("Тур по городу","15:00","3 700 р", R.drawable.antalia));
+        AntaliaDataList.add(new TourData("Экстримальный отдых","10:15","4 700 р", R.drawable.antalia));
+        AntaliaDataList.add(new TourData("Тур по достопримечательностям","8:00","3 087 р", R.drawable.antalia));
+        AntaliaDataList.add(new TourData("Тур по каньону","8:30","3 700 р", R.drawable.antalia));
         setTourRecycler(AntaliaDataList, view);
         return view;
     }

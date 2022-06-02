@@ -86,10 +86,9 @@ public class HomeFragment extends Fragment {
     }
 
     public void onTourButtonClick(View view) {
-//        Intent i = new Intent(getContext(), TourActivity.class);
-//        i.putExtra("name", btnTour.getText().toString());
-//        getContext().startActivity(i);
-        scrollView.scrollTo(tv.getScrollX(), tv.getScrollY());
+        Intent i = new Intent(getContext(), TourActivity.class);
+        i.putExtra("name", btnTour.getText().toString());
+        getContext().startActivity(i);
     }
     public void onHotelButtonClick(View view) {
         Intent i = new Intent(getContext(), TourActivity.class);

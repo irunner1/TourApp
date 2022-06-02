@@ -53,10 +53,10 @@ public class ParisFragment extends Fragment {
         sliderView.setSliderAdapter(sliderAdapter);
         sliderView.startAutoCycle();
         List<TourData> ParisDataList = new ArrayList<>();
-        ParisDataList.add(new TourData("Тур по Нью Йорку","15:00","6 500 р", R.drawable.tour1));
-        ParisDataList.add(new TourData("Тур по Манхеттену","15 июля","2 500 р", R.drawable.tour2));
-        ParisDataList.add(new TourData("Италия",""," р", R.drawable.tour3));
-        ParisDataList.add(new TourData("Сингапур",""," р", R.drawable.singapore));
+        ParisDataList.add(new TourData("Экскурсия по катакомбам","15:00","4 365 р", R.drawable.paristour1));
+        ParisDataList.add(new TourData("Экскурсия по улицам Парижа","12:00","2 469 р", R.drawable.paristour2));
+        ParisDataList.add(new TourData("Экскурсия на Эйфелеву башню","Каждый час","6 106 р", R.drawable.paristour3));
+        ParisDataList.add(new TourData("Ночной тур по городу","22:00","1 852 р", R.drawable.paristour4));
         setTourRecycler(ParisDataList, view);
         return view;
     }

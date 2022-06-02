@@ -53,10 +53,10 @@ public class BarsaFragment extends Fragment {
         sliderView.setSliderAdapter(sliderAdapter);
         sliderView.startAutoCycle();
         List<TourData> BarsaDataList = new ArrayList<>();
-        BarsaDataList.add(new TourData("Тур по Нью Йорку","15:00","6 500 р", R.drawable.tour1));
-        BarsaDataList.add(new TourData("Тур по Манхеттену","15 июля","2 500 р", R.drawable.tour2));
-        BarsaDataList.add(new TourData("Италия",""," р", R.drawable.tour3));
-        BarsaDataList.add(new TourData("Сингапур",""," р", R.drawable.singapore));
+        BarsaDataList.add(new TourData("Тур около Саграда Де Фамилия","15:00","6 500 р", R.drawable.tourbarsa1));
+        BarsaDataList.add(new TourData("Шоу фламенко","15:20","3 500 р", R.drawable.tourbarsa2));
+        BarsaDataList.add(new TourData("Тур на автобусе","10:00","2 058 р", R.drawable.tourbarsa3));
+        BarsaDataList.add(new TourData("Тур по лучшим видам","9:00","4 047 р", R.drawable.tourbarsa4));
         setTourRecycler(BarsaDataList, view);
         return view;
     }

@@ -45,10 +45,10 @@ public class ToursFragment extends Fragment {
         toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         toolBarSet();
         List<TourData> ToursDataList = new ArrayList<>();
-        ToursDataList.add(new TourData("Тур по Нью Йорку","15:00","6 500 р", R.drawable.tour1));
-        ToursDataList.add(new TourData("Тур по Манхеттену","15 июля","2 500 р", R.drawable.tour2));
-        ToursDataList.add(new TourData("Италия",""," р", R.drawable.tour3));
-        ToursDataList.add(new TourData("Сингапур",""," р", R.drawable.singapore));
+        ToursDataList.add(new TourData("Обзорная автобусная экскурсия по Москве (3 часа)","15:00","6 500 р", R.drawable.msktour1));
+        ToursDataList.add(new TourData("Обзорная экскурсия по Москве на автобусе (4 часа)","15 июля","2 500 р", R.drawable.msktour2));
+        ToursDataList.add(new TourData("Москва: исторический центр за пару часов",""," р", R.drawable.msktour3));
+        ToursDataList.add(new TourData("Пешеходная обзорная экскурсия по Москве",""," р", R.drawable.msktour4));
         setActivityRecycler(ToursDataList, view);
         return view;
     }
