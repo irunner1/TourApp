@@ -78,11 +78,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="52dp"
             android:layout_marginTop="40dp"
-            android:layout_marginEnd="231dp"
             android:text="Уведомления"
             android:textSize="20sp"
             android:textColor="@color/grey"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
@@ -101,11 +99,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="52dp"
             android:layout_marginTop="40dp"
-            android:layout_marginEnd="298dp"
             android:text="Оплата"
             android:textSize="18sp"
             android:textColor="@color/grey"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt" />
 
@@ -124,11 +120,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="52dp"
             android:layout_marginTop="40dp"
-            android:layout_marginEnd="288dp"
             android:text="Справка"
             android:textSize="18sp"
             android:textColor="@color/grey"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
@@ -147,11 +141,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="52dp"
             android:layout_marginTop="40dp"
-            android:layout_marginEnd="268dp"
             android:text="Настройки"
             android:textSize="18sp"
             android:textColor="@color/grey"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
