@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pages.NotificationsFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:background="@color/white"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:theme="@style/ToolbarTheme" />
+
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="27dp"
+        android:text="Уведомления"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="20dp"
+        android:text="Выберите, какие push уведомления вы хотите получать на этом устройстве. Вы можете изменить это в любой момент"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView41" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch1"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="38dp"
+        android:enabled="true"
+        android:paddingStart="20dp"
+        android:paddingEnd="30dp"
+        android:text="Уведомления об акциях"
+        android:textSize="20sp"
+        android:checked="true"
+        android:theme="@style/MySwitch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView42" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch2"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:enabled="true"
+        android:paddingStart="20dp"
+        android:paddingEnd="30dp"
+        android:text="Уведомления основанные на вашем местоположении"
+        android:textSize="20sp"
+        android:checked="true"
+        android:theme="@style/MySwitch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch3"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:enabled="true"
+        android:paddingStart="20dp"
+        android:paddingEnd="30dp"
+        android:text="Уведомления о новых турах"
+        android:textSize="20sp"
+        android:theme="@style/MySwitch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch2" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch4"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:enabled="true"
+        android:paddingStart="20dp"
+        android:paddingEnd="30dp"
+        android:text="Уведомление об изменении бронирования"
+        android:textSize="20sp"
+        android:checked="true"
+        android:theme="@style/MySwitch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch3" />
+</androidx.constraintlayout.widget.ConstraintLayout>

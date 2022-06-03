@@ -8,13 +8,18 @@ import com.example.kr.R;
 import com.example.kr.fragments.FindFragment;
 import com.example.kr.pages.AntaliaFragment;
 import com.example.kr.pages.BarsaFragment;
+import com.example.kr.pages.EditFragment;
+import com.example.kr.pages.HelpFragment;
 import com.example.kr.pages.HotelsFragment;
 import com.example.kr.pages.ItalyFragment;
 import com.example.kr.pages.NYFragment;
 import com.example.kr.pages.AbkhaziaFragment;
+import com.example.kr.pages.NotificationsFragment;
 import com.example.kr.pages.ParisFragment;
+import com.example.kr.pages.PaymentFragment;
 import com.example.kr.pages.RestaurantsFragment;
 import com.example.kr.pages.RomaFragment;
+import com.example.kr.pages.SettingsFragment;
 import com.example.kr.pages.SingaporeFragment;
 import com.example.kr.pages.ToursFragment;
 import com.example.kr.pages.TurkeyFragment;
@@ -83,11 +88,27 @@ public class TourActivity extends AppCompatActivity {
             Fragment fragment = new RestaurantsFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
         }
-        if (extras.getString("name").equals("Абхазия")) {
-//            Fragment fragment = new AbkhaziaFragment();
-//            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
-        }
 
+        if (extras.getString("name").equals("Настройки")) {
+            Fragment fragment = new SettingsFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
+        }
+        if (extras.getString("name").equals("Справка")) {
+            Fragment fragment = new HelpFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
+        }
+        if (extras.getString("name").equals("Оплата")) {
+            Fragment fragment = new PaymentFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
+        }
+        if (extras.getString("name").equals("Уведомления")) {
+            Fragment fragment = new NotificationsFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
+        }
+        if (extras.getString("name").equals("Редактировать")) {
+            Fragment fragment = new EditFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
+        }
     }
 
     @Override
