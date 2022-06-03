@@ -12,10 +12,10 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            android:layout_width="409dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="3dp"
             android:minHeight="?attr/actionBarSize"
             app:theme="@style/ToolbarTheme"
             app:layout_constraintEnd_toEndOf="parent"
