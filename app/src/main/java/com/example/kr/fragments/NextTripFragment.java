@@ -22,12 +22,15 @@ import java.util.List;
 public class NextTripFragment extends Fragment {
     RecyclerView RecViewNextTrips;
     NextTripAdapter nextTripAdapter;
+    public static List<NextTripsData> NextTripDataList = new ArrayList<>();
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_recent_tours, container, false);
-        List<NextTripsData> NextTripDataList = new ArrayList<>();
         NextTripDataList.add(new NextTripsData("Абхазия","15-20 июля",R.drawable.tour1));
+
         setNextTripRecycler(NextTripDataList, view);
         return view;
     }

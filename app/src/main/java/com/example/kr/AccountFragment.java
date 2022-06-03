@@ -9,11 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
+import com.example.kr.pages.EditFragment;
 import com.example.kr.Activity.TourActivity;
 
 public class AccountFragment extends Fragment {
-    TextView textView, tv2, tv3, tv4, tv5;
+    TextView textView, tv2, tv3, tv4, tv5, txtName;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -24,6 +24,9 @@ public class AccountFragment extends Fragment {
         tv3 = view.findViewById(R.id.textView10);
         tv4 = view.findViewById(R.id.textView11);
         tv5 = view.findViewById(R.id.textView12);
+        txtName = view.findViewById(R.id.txtName);
+
+        if (EditFragment.name != null) {txtName.setText(EditFragment.name);}
         textView.setOnClickListener(this::onClick);
         tv2.setOnClickListener(this::onUClick);
         tv3.setOnClickListener(this::onOClick);

@@ -9,11 +9,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.example.kr.R;
 
 public class EditFragment extends Fragment {
     private Toolbar toolbar;
+    EditText et;
+    public static String name;
 
     private void toolBarSet() {
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
@@ -34,6 +37,8 @@ public class EditFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_edit, container, false);
         toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         toolBarSet();
+        et = view.findViewById(R.id.editTextName);
+        name = et.getText().toString();
         return view;
     }
 }
