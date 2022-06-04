@@ -83,7 +83,6 @@ public class Fles {
             bw.append(email);
             bw.append("|");
             bw.append(city);
-//            bw.append(uri);
             bw.append('\n');
             bw.close();
         } catch (FileNotFoundException e) {
@@ -111,15 +110,11 @@ public class Fles {
 
     public static String saveToInternalStorage(Bitmap bitmapImage, Context context){
         ContextWrapper cw = new ContextWrapper(context);
-        // path to /data/data/yourapp/app_data/imageDir
         File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
-        // Create imageDir
         File mypath=new File(directory,"profile.jpg");
-
         FileOutputStream fos = null;
         try {
             fos = new FileOutputStream(mypath);
-            // Use the compress method on the BitMap object to write image to the OutputStream
             bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, fos);
         } catch (Exception e) {
             e.printStackTrace();
@@ -146,6 +141,5 @@ public class Fles {
         {
             e.printStackTrace();
         }
-
     }
 }
