@@ -4,6 +4,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 import android.app.Activity;
 import android.content.Context;
+import android.net.Uri;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -17,7 +18,7 @@ import java.io.OutputStreamWriter;
 
 public class Fles {
     final static String FILENAME = "file";
-    final static String SECONDFILENAME = "file";
+    final static String SECONDFILENAME = "fle";
 
     public static void writeToFile (String countryName, String dates, String prices, Context context) {
         try {
@@ -67,12 +68,15 @@ public class Fles {
     }
 
 
-    public static void writetoFile (String countryName, String dates, String prices, Context context) {
+    public static void writetoFile (String name, String email, String city, Context context) {
         try {
-            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(context.openFileOutput(SECONDFILENAME, Context.MODE_APPEND)));
-            bw.append(countryName);
-            bw.append(dates);
-            bw.append(prices);
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(context.openFileOutput(SECONDFILENAME, MODE_PRIVATE)));
+            bw.append(name);
+            bw.append("/");
+            bw.append(email);
+            bw.append("|");
+            bw.append(city);
+//            bw.append(uri);
             bw.append('\n');
             bw.close();
         } catch (FileNotFoundException e) {
