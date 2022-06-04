@@ -2,6 +2,9 @@ package com.example.kr.pages;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -13,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +28,10 @@ import android.widget.Toast;
 import com.example.kr.R;
 import com.example.kr.databinding.ActivityMainBinding;
 import com.example.kr.helpers.Fles;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 public class EditFragment extends Fragment {
     private Toolbar toolbar;
@@ -72,6 +80,7 @@ public class EditFragment extends Fragment {
         etName.setText(Name);
         etCity.setText(City);
         etEmail.setText(Email);
+        Fles.loadImageFromStorage(getContext(), iv);
         return view;
     }
 
@@ -101,5 +110,7 @@ public class EditFragment extends Fragment {
 
     public void onSaveClick(View view) {
         Fles.writetoFile(etName.getText().toString(), etEmail.getText().toString(), etCity.getText().toString(), getContext());
+        Bitmap bitmap = ((BitmapDrawable)iv.getDrawable()).getBitmap();
+        Fles.saveToInternalStorage(bitmap, getContext());
     }
 }

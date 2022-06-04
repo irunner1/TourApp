@@ -1,6 +1,7 @@
 package com.example.kr;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,12 +12,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kr.Activity.TourActivity;
 import com.example.kr.adapter.TourAdapter;
+import com.example.kr.helpers.Fles;
 import com.example.kr.model.TourData;
 
 import com.example.kr.adapter.CardAdapter;
@@ -32,6 +35,7 @@ public class HomeFragment extends Fragment {
     Button btnTour, btnHotels, btnRestaurant, btnActivity;
     ScrollView scrollView;
     TextView tv;
+    ImageView imageView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,6 +56,8 @@ public class HomeFragment extends Fragment {
         btnHotels.setOnClickListener(this::onHotelButtonClick);
         btnRestaurant.setOnClickListener(this::onRestButtonClick);
         btnActivity.setOnClickListener(this::onActivityButtonClick);
+        imageView = view.findViewById(R.id.imageView);
+        Fles.loadImageFromStorage(getContext(), imageView);
 
         List<TourData> TourDataList = new ArrayList<>();
         TourDataList.add(new TourData("Абхазия","Отправление из Москвы","от 12 699 р", R.drawable.tour1));
