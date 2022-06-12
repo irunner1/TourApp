@@ -24,15 +24,33 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 public class Fles {
-    final static String FILENAME = "file";
-    final static String SECONDFILENAME = "fle";
+//    final static String FILENAME = "file";
+//    final static String SECONDFILENAME = "fle";
 
-    public static void writeToFile (String countryName, String dates, String prices, Context context) {
+    public static void writeToFile(String one, String two, String three, Context context, final String FILENAME) {
         try {
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(context.openFileOutput(FILENAME, Context.MODE_APPEND)));
-            bw.append(countryName);
-            bw.append(dates);
-            bw.append(prices);
+            bw.append(one);
+            bw.append("|");
+            bw.append(two);
+            bw.append("/");
+            bw.append(three);
+            bw.append('\n');
+            bw.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void writetoFile (String name, String email, String city, Context context, final String SECONDFILENAME) {
+        try {
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(context.openFileOutput(SECONDFILENAME, MODE_PRIVATE)));
+            bw.append(name);
+            bw.append("|");
+            bw.append(email);
+            bw.append("/");
+            bw.append(city);
             bw.append('\n');
             bw.close();
         } catch (FileNotFoundException e) {
@@ -42,7 +60,7 @@ public class Fles {
         }
     }
 
-    public static String readFromFile(Context context) { //возвращает весь файл
+    public static String readFromFile(Context context, final String FILENAME) { //возвращает весь файл
         String text = "";
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(context.openFileInput(FILENAME)));
@@ -58,9 +76,9 @@ public class Fles {
         return text;
     }
 
-    public static void deleteFromFile(Context context, String rep){
+    public static void deleteFromFile(Context context, String rep, final String FILENAME){
         try {
-            String buf = readFromFile(context);
+            String buf = readFromFile(context, FILENAME);
             buf = buf.replace(rep, "");
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(context.openFileOutput(FILENAME, MODE_PRIVATE)));
             bw.write(buf);
@@ -72,40 +90,6 @@ public class Fles {
         catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-
-    public static void writetoFile (String name, String email, String city, Context context) {
-        try {
-            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(context.openFileOutput(SECONDFILENAME, MODE_PRIVATE)));
-            bw.append(name);
-            bw.append("/");
-            bw.append(email);
-            bw.append("|");
-            bw.append(city);
-            bw.append('\n');
-            bw.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static String readfromFile(Context context) { //возвращает весь файл
-        String text = "";
-        try {
-            BufferedReader br = new BufferedReader(new InputStreamReader(context.openFileInput(SECONDFILENAME)));
-            String str = "";
-            while ((str = br.readLine()) != null) {
-                text += str;
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return text;
     }
 
     public static String saveToInternalStorage(Bitmap bitmapImage, Context context){

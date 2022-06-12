@@ -45,8 +45,8 @@ public class AccountFragment extends Fragment {
         tv4.setOnClickListener(this::onSClick);
         tv5.setOnClickListener(this::onNClick);
 
-        String str = Fles.readfromFile(getContext());
-        int c1 = str.indexOf('/'); //находим элемент после названия страны
+        String str = Fles.readFromFile(getContext(), "fle");
+        int c1 = str.indexOf('|'); //находим элемент после названия страны
         for (int i = 0; i < str.length(); i++) { //парсим данные в переменные
             if (i < c1) {Name += str.charAt(i);}
         }

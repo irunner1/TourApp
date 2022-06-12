@@ -42,7 +42,7 @@ public class ItalyFragment extends Fragment {
         toolBarSet();
         btn = (ImageButton)view.findViewById(R.id.imageButtonItaly);
         btn.setOnClickListener(this::onButtonClick);
-        String tmp = Fles.readFromFile(getContext()); //Проверка наличия страны в файле
+        String tmp = Fles.readFromFile(getContext(), "file"); //Проверка наличия страны в файле
         if (tmp.contains("Италия")) {
             active_btn = true;
             btn.setImageResource(R.drawable.like_filled);
@@ -57,11 +57,11 @@ public class ItalyFragment extends Fragment {
             if (!LikedFragment.likedDataList.isEmpty()) {
                 LikedFragment.likedDataList.removeIf(o -> o.equals("Италия"));
             }
-            Fles.deleteFromFile(getContext(), "Италия|15-20 августа/80 146 р.");
+            Fles.deleteFromFile(getContext(), "Италия|15-20 августа/80 146 р.", "file");
             return;
         }
         active_btn = true;
-        Fles.writeToFile("Италия|", "15-20 августа/", "80 146 р.", getContext());
+        Fles.writeToFile("Италия", "15-20 августа", "80 146 р.", getContext(), "file");
         btn.setImageResource(R.drawable.like_filled);
     }
 }

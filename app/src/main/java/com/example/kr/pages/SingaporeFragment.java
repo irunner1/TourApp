@@ -42,7 +42,7 @@ public class SingaporeFragment extends Fragment {
         toolBarSet();
         btn = (ImageButton)view.findViewById(R.id.imageButtonSingapore);
         btn.setOnClickListener(this::onMyButtonClick);
-        String tmp = Fles.readFromFile(getContext()); //Проверка наличия страны в файле
+        String tmp = Fles.readFromFile(getContext(), "file"); //Проверка наличия страны в файле
         if (tmp.contains("Сингапур")) {
             active_btn = true;
             btn.setImageResource(R.drawable.like_filled);
@@ -57,11 +57,11 @@ public class SingaporeFragment extends Fragment {
             if (!LikedFragment.likedDataList.isEmpty()) {
                 LikedFragment.likedDataList.removeIf(o -> o.equals("Сингапур"));
             }
-            Fles.deleteFromFile(getContext(), "Сингапур|15-20 июня/105 000 р.");
+            Fles.deleteFromFile(getContext(), "Сингапур|15-20 июня/105 000 р.", "file");
             return;
         }
         active_btn = true;
-        Fles.writeToFile("Сингапур|", "15-20 июня/", "105 000 р.", getContext());
+        Fles.writeToFile("Сингапур", "15-20 июня", "105 000 р.", getContext(), "file");
         btn.setImageResource(R.drawable.like_filled);
     }
 }

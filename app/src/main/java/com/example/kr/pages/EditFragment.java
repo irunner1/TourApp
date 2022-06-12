@@ -69,9 +69,9 @@ public class EditFragment extends Fragment {
         iv.setOnClickListener(this::pickImage);
         btnSave.setOnClickListener(this::onSaveClick);
 
-        String str = Fles.readfromFile(getContext());
-        int c1 = str.indexOf('/'); //находим элемент после названия страны
-        int c2 = str.indexOf('|'); //находим элемент после дат
+        String str = Fles.readFromFile(getContext(), "fle");
+        int c1 = str.indexOf('|'); //находим элемент после названия страны
+        int c2 = str.indexOf('/'); //находим элемент после дат
         for (int i = 0; i < str.length(); i++) { //парсим данные в переменные
             if (i < c1) {Name += str.charAt(i);}
             if (i > c1 && i < c2) {Email += str.charAt(i);}
@@ -109,7 +109,7 @@ public class EditFragment extends Fragment {
     );
 
     public void onSaveClick(View view) {
-        Fles.writetoFile(etName.getText().toString(), etEmail.getText().toString(), etCity.getText().toString(), getContext());
+        Fles.writetoFile(etName.getText().toString(), etEmail.getText().toString(), etCity.getText().toString(), getContext(), "fle");
         Bitmap bitmap = ((BitmapDrawable)iv.getDrawable()).getBitmap();
         Fles.saveToInternalStorage(bitmap, getContext());
     }

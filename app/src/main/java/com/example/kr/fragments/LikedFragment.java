@@ -28,7 +28,7 @@ public class LikedFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_liked, container, false);
 
-        String tmp = Fles.readFromFile(getContext()); //Читаются данные из файла
+        String tmp = Fles.readFromFile(getContext(), "file"); //Читаются данные из файла
         if (tmp.isEmpty()) { return view; } //Если их нет, выводим пустоту
         likedDataList.clear(); //Очищаем лист
         long count = tmp.chars().filter(ch -> ch == '.').count(); //Считаем колво строк в файле
