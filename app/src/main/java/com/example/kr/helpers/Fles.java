@@ -37,13 +37,15 @@ public class Fles {
             bw.append(three);
             bw.append('\n');
             bw.close();
-        } catch (FileNotFoundException e) {
+        }
+        catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
     }
-    public static void writetoFile (String name, String email, String city, Context context, final String SECONDFILENAME) {
+    public static void writetoFile(String name, String email, String city, Context context, final String SECONDFILENAME) {
         try {
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(context.openFileOutput(SECONDFILENAME, MODE_PRIVATE)));
             bw.append(name);
@@ -53,9 +55,11 @@ public class Fles {
             bw.append(city);
             bw.append('\n');
             bw.close();
-        } catch (FileNotFoundException e) {
+        }
+        catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -68,9 +72,11 @@ public class Fles {
             while ((str = br.readLine()) != null) {
                 text += str;
             }
-        } catch (FileNotFoundException e) {
+        }
+        catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
         return text;
@@ -92,17 +98,19 @@ public class Fles {
         }
     }
 
-    public static String saveToInternalStorage(Bitmap bitmapImage, Context context){
+    public static String saveToInternalStorage(Bitmap bitmapImage, Context context) {
         ContextWrapper cw = new ContextWrapper(context);
         File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
-        File mypath=new File(directory,"profile.jpg");
+        File mypath = new File(directory,"profile.jpg");
         FileOutputStream fos = null;
         try {
             fos = new FileOutputStream(mypath);
             bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, fos);
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
-        } finally {
+        }
+        finally {
             try {
                 fos.close();
             } catch (IOException e) {
@@ -112,8 +120,7 @@ public class Fles {
         return directory.getAbsolutePath();
     }
 
-    public static void loadImageFromStorage(Context context, ImageView iv)
-    {
+    public static void loadImageFromStorage(Context context, ImageView iv) {
         try {
             ContextWrapper cw = new ContextWrapper(context);
             File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
@@ -121,8 +128,7 @@ public class Fles {
             Bitmap b = BitmapFactory.decodeStream(new FileInputStream(f));
             iv.setImageBitmap(b);
         }
-        catch (FileNotFoundException e)
-        {
+        catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
