@@ -61,7 +61,7 @@ public class TurkeyFragment extends Fragment {
             return;
         }
         active_btn = true;
-        Fles.writeToFile("Турция", "10-20 июля", "19 282 р.", getContext(), "file");
+        Fles.writeFile("Турция", "10-20 июля", "19 282 р.", getContext(), "file", 1);
         btn.setImageResource(R.drawable.like_filled);
     }
 }

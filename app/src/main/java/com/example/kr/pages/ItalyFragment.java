@@ -61,7 +61,7 @@ public class ItalyFragment extends Fragment {
             return;
         }
         active_btn = true;
-        Fles.writeToFile("Италия", "15-20 августа", "80 146 р.", getContext(), "file");
+        Fles.writeFile("Италия", "15-20 августа", "80 146 р.", getContext(), "file", 1);
         btn.setImageResource(R.drawable.like_filled);
     }
 }

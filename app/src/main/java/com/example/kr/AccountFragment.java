@@ -1,27 +1,16 @@
 package com.example.kr;
 
-import android.content.Context;
-import android.content.ContextWrapper;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.kr.helpers.Fles;
-import com.example.kr.pages.EditFragment;
 import com.example.kr.Activity.TourActivity;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 
 public class AccountFragment extends Fragment {
     TextView textView, tv2, tv3, tv4, tv5, txtName;

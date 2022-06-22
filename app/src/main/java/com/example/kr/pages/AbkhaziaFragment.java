@@ -50,7 +50,6 @@ public class AbkhaziaFragment extends Fragment {
         return view;
     }
 
-
     public void onMyButtonClick(View view) {
         if (active_btn) {
             active_btn = false;
@@ -62,7 +61,7 @@ public class AbkhaziaFragment extends Fragment {
             return;
         }
         active_btn = true;
-        Fles.writeToFile("Абхазия|", "55 июля/", "13 699р.", getContext(), "file");
+        Fles.writeFile("Абхазия|", "55 июля/", "13 699р.", getContext(), "file", 1);
         btn.setImageResource(R.drawable.like_filled);
     }
 }

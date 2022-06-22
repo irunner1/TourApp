@@ -61,7 +61,7 @@ public class SingaporeFragment extends Fragment {
             return;
         }
         active_btn = true;
-        Fles.writeToFile("Сингапур", "15-20 июня", "105 000 р.", getContext(), "file");
+        Fles.writeFile("Сингапур", "15-20 июня", "105 000 р.", getContext(), "file", 1);
         btn.setImageResource(R.drawable.like_filled);
     }
 }

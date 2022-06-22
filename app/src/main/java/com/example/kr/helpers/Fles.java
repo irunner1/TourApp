@@ -24,37 +24,28 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 public class Fles {
-//    final static String FILENAME = "file";
-//    final static String SECONDFILENAME = "fle";
-
-    public static void writeToFile(String one, String two, String three, Context context, final String FILENAME) {
+    public static void writeFile(String one, String two, String three, Context context, final String FILENAME, int modifier) {
         try {
-            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(context.openFileOutput(FILENAME, Context.MODE_APPEND)));
-            bw.append(one);
-            bw.append("|");
-            bw.append(two);
-            bw.append("/");
-            bw.append(three);
-            bw.append('\n');
-            bw.close();
-        }
-        catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    public static void writetoFile(String name, String email, String city, Context context, final String SECONDFILENAME) {
-        try {
-            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(context.openFileOutput(SECONDFILENAME, MODE_PRIVATE)));
-            bw.append(name);
-            bw.append("|");
-            bw.append(email);
-            bw.append("/");
-            bw.append(city);
-            bw.append('\n');
-            bw.close();
+            if (modifier == 1) { // "file"
+                BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(context.openFileOutput(FILENAME, Context.MODE_APPEND)));
+                bw.append(one);
+                bw.append("|");
+                bw.append(two);
+                bw.append("/");
+                bw.append(three);
+                bw.append('\n');
+                bw.close();
+            }
+            if (modifier == 2) { // "fle"
+                BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(context.openFileOutput(FILENAME, MODE_PRIVATE)));
+                bw.append(one);
+                bw.append("|");
+                bw.append(two);
+                bw.append("/");
+                bw.append(three);
+                bw.append('\n');
+                bw.close();
+            }
         }
         catch (FileNotFoundException e) {
             e.printStackTrace();

@@ -109,7 +109,7 @@ public class EditFragment extends Fragment {
     );
 
     public void onSaveClick(View view) {
-        Fles.writetoFile(etName.getText().toString(), etEmail.getText().toString(), etCity.getText().toString(), getContext(), "fle");
+        Fles.writeFile(etName.getText().toString(), etEmail.getText().toString(), etCity.getText().toString(), getContext(), "fle", 2);
         Bitmap bitmap = ((BitmapDrawable)iv.getDrawable()).getBitmap();
         Fles.saveToInternalStorage(bitmap, getContext());
     }
