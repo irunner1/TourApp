@@ -52,6 +52,20 @@ public class NextTripAdapter extends RecyclerView.Adapter<NextTripAdapter.NextTr
         });
     }
 
+    public static String addItem(List<NextTripsData> nextTripsDataList, String placeName, String countryName, Integer imageUrl) {
+        nextTripsDataList.add(new NextTripsData(placeName,countryName,imageUrl));
+        return nextTripsDataList.get(0).getPlaceName();
+    }
+
+    public static boolean removeItem(List<NextTripsData> nextTripsDataList, String placeName, String countryName, Integer imageUrl) {
+        nextTripsDataList.remove(new NextTripsData(placeName, countryName, imageUrl));
+        return nextTripsDataList.contains(placeName);
+    }
+
+    public static int getNextTripLen(List<NextTripsData> nextTripsDataList) {
+        return nextTripsDataList.size();
+    }
+
     @Override
     public int getItemCount() {
         return nextTripsDataList.size();

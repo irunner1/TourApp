@@ -23,7 +23,6 @@ public class NextTripFragment extends Fragment {
     RecyclerView RecViewNextTrips;
     NextTripAdapter nextTripAdapter;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
